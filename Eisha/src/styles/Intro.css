@@ -1,4 +1,4 @@
-/* Intro section container */
+/* ------------- Layout & Containers ------------- */
 #intro {
   position: relative;
   width: 100%;
@@ -13,67 +13,126 @@
   margin: 0;
 }
 
-/* Foreground text container */
-.intro-text {
-  position: relative; /* ensures it's above the background */
-  z-index: 10;
-  max-width: 700px;
+.liquid-ether-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* "Hi, I'm" text - thinner and closer to name */
+.intro-text {
+  position: relative;
+  z-index: 10;
+  max-width: 90vw;
+}
+
+/* ------------- Typography ------------- */
 .intro-text .greeting {
   font-family: 'Nanum Myeongjo', serif;
-  font-weight: 300; /* thinner */
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 0.25rem;
+  font-weight: 300;
+  font-size: clamp(3rem, 10vw, 6rem);
+  margin-bottom: 0.1rem;
 }
 
-/* Name text - bold with animated gradient */
-.intro-text .name {
+.name-gradient,
+.name-shiny {
   font-family: 'Nanum Myeongjo', serif;
-  font-weight: 700; /* bold */
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 700;
+  font-size: clamp(5rem, 15vw, 10rem);
+  line-height: 1;
+  margin-bottom: 1rem;
   background: linear-gradient(270deg, #1E3A8A, #3B82F6, #F97316, #1E3A8A);
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientShift 8s ease infinite;
-  margin-bottom: 1rem;
 }
 
-/* Paragraph text */
 .intro-text p {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   opacity: 0.9;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Button */
-.intro-text a {
+/* ------------- Buttons ------------- */
+.intro-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.shiny-btn {
+  cursor: pointer;
+  background-color: #111;
+  border: 1px solid #353535;
+  border-radius: 8px;
+  padding: .4em 1.2em;
+  transition: all .3s;
+}
+
+.shiny-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ------------- Shiny Text Effect ------------- */
+.shiny-text {
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: clamp(1.25em, 2vw, 1.2rem);
+  font-weight: 100;
+  color: #edededa4;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: white;
-  color: black;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: background 0.3s;
+  animation: shine 8s linear infinite;
 }
 
-.intro-text a:hover {
-  background-color: #e5e5e5;
+.shiny-text.disabled {
+  animation: none;
 }
 
-/* Gradient animation */
+/* ------------- Keyframes ------------- */
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+  0% { background-position: 100%; }
+  100% { background-position: -100%; }
+}
+
+/* Buttons container */
+.intro-buttons {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* make image positioning relative to container */
+}
+
+/* Image positioned on top of text */
+.intro-btn-image {
+  position: absolute;
+  top: -50%; /* move it upwards so it overlaps text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000; /* adjust size */
+  max-width: 35vw;
+  height: auto;
+  z-index: 15; /* in front of text and buttons */
+  pointer-events: none; /* allows buttons to be clickable */
 }

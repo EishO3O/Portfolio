@@ -1,6 +1,7 @@
 import React from "react";
 import LiquidEther from "../effects/LiquidEther";
 import "../styles/Intro.css";
+import myImage from "../assets/image.png";
 
 export default function Intro() {
   return (
@@ -13,13 +14,33 @@ export default function Intro() {
 
       {/* Foreground text */}
       <div className="intro-text">
-        <div className="greeting">Hi, I'm</div>
-        <div className="name">Richard Ryan</div>
+        <div className="greeting">Hi! I'm</div>
+        <div className="name-gradient">Richard Ryan</div>
+
         <p>
-          A passionate developer crafting modern web experiences with React and
-          creative coding.
+          I am a BS Computer Science senior specializing in frontend development and UI/UX design,<br />
+          with proficiency in Figma, React.js, HTML, CSS, and JavaScript!<br />
+          Currently advancing backend and cloud skills to become a full-stack developer,<br />
+          with a strong focus on delivering scalable and user-centric digital solutions.
         </p>
-        <a href="#work">View My Work</a>
+
+        {/* Buttons container */}
+        <div className="intro-buttons">
+          <a href="/resume.pdf" download className="shiny-btn">
+            <span className="shiny-text">Download Resume</span>
+          </a>
+
+          {/* Image between buttons */}
+          <img
+            src={myImage}
+            alt="Decorative"
+            className="intro-btn-image"
+          />
+
+          <a href="#contact" className="shiny-btn">
+            <span className="shiny-text">Reach Out To Me</span>
+          </a>
+        </div>
       </div>
     </section>
   );
