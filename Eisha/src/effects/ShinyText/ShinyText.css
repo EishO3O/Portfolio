@@ -1,0 +1,13 @@
+.shiny-text {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  transition: background-position 0.2s ease;
+}
+
+.shiny-text:hover {
+  background-position: var(--mouse-x, 50%) var(--mouse-y, 50%);
+}

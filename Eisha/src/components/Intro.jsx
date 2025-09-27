@@ -1,28 +1,25 @@
 import React from "react";
 import LiquidEther from "../effects/LiquidEther";
+import "../styles/Intro.css";
 
 export default function Intro() {
   return (
-    <section
-      id="intro"
-      className="relative w-full h-screen flex items-center justify-center text-center text-white overflow-hidden"
-    >
-      {/* Background effect */}
-      <LiquidEther colors={['#64B8B9', '#E6DBA3', '##A3F0B0']} />
+    <section id="intro">
+      {/* LiquidEther background */}
+      <LiquidEther
+        colors={["#1E3A8A", "#3B82F6", "#F97316"]}
+        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+      />
 
-      {/* Foreground content */}
-      <div className="max-w-2xl px-6 z-10">
-        <h1 className="text-5xl font-bold mb-4">Hi, I’m Richard Ryan</h1>
-        <p className="text-lg opacity-90 mb-6">
+      {/* Foreground text */}
+      <div className="intro-text">
+        <div className="greeting">Hi, I'm</div>
+        <div className="name">Richard Ryan</div>
+        <p>
           A passionate developer crafting modern web experiences with React and
           creative coding.
         </p>
-        <a
-          href="#work"
-          className="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition"
-        >
-          View My Work
-        </a>
+        <a href="#work">View My Work</a>
       </div>
     </section>
   );

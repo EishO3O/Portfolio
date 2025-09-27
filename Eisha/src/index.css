@@ -1,16 +1,41 @@
+/* 1️⃣ Google Fonts - MUST be at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans:wght@400;500&display=swap');
 
+/* 2️⃣ Tailwind animation imports */
 @import "tw-animate-css";
 
+/* 3️⃣ Tailwind plugin */
 @plugin "tailwindcss-animate";
 
+/* 4️⃣ Custom variants */
 @custom-variant dark (&:is(.dark *));
 
-body {
+/* 5️⃣ Global resets and fonts */
+* {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body text */
+body {
+  font-family: 'Noto Sans', sans-serif; /* global text font */
+  line-height: 1.6;
+  @apply bg-background text-foreground;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nanum Myeongjo', serif; /* header font */
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -18,6 +43,7 @@ body {
   background: white;
   padding: 1rem;
   border-bottom: 1px solid #eee;
+  z-index: 50;
 }
 
 .navbar ul {
@@ -27,18 +53,23 @@ body {
   gap: 2rem;
 }
 
+/* Sections */
 .section {
   min-height: 100vh;
   padding: 4rem 2rem;
 }
 
+/* Project cards */
 .project-card {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 8px;
 }
+
+/* Tailwind utilities */
 @tailwind utilities;
 
+/* Theme variables */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -77,6 +108,7 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Root variables */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -107,11 +139,12 @@ body {
   --sidebar-primary: oklch(0.21 0.034 264.665);
   --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
   --sidebar-accent: oklch(0.967 0.003 264.542);
-  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
+  --sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
 }
 
+/* Dark mode */
 .dark {
   --background: oklch(0.13 0.028 261.692);
   --foreground: oklch(0.985 0.002 247.839);
@@ -131,25 +164,14 @@ body {
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.034 264.665);
-  --sidebar-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-accent: oklch(0.278 0.033 256.848);
-  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/* Tailwind base layer */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
