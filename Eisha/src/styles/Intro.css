@@ -35,6 +35,7 @@
   font-weight: 300;
   font-size: clamp(3rem, 10vw, 6rem);
   margin-bottom: 0.1rem;
+  line-height: 1.01;
 }
 
 .name-gradient,
@@ -42,7 +43,7 @@
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 700;
   font-size: clamp(5rem, 15vw, 10rem);
-  line-height: 1;
+  line-height: 1.01;
   margin-bottom: 1rem;
   background: linear-gradient(270deg, #1E3A8A, #3B82F6, #F97316, #1E3A8A);
   background-size: 600% 600%;
@@ -69,7 +70,7 @@
 
 .shiny-btn {
   cursor: pointer;
-  background-color: #111;
+  background-color: #00000044;
   border: 1px solid #353535;
   border-radius: 8px;
   padding: .4em 1.2em;

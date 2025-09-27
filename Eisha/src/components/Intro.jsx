@@ -1,5 +1,5 @@
 import React from "react";
-import LiquidEther from "../effects/LiquidEther";
+import LiquidEther from "../effects/LiquidEther/LiquidEther";
 import "../styles/Intro.css";
 import myImage from "../assets/image.png";
 
@@ -15,12 +15,12 @@ export default function Intro() {
       {/* Foreground text */}
       <div className="intro-text">
         <div className="greeting">Hi! I'm</div>
-        <div className="name-gradient">Richard Ryan</div>
+        <div className="name-gradient">Eisha Janel Alva</div>
 
         <p>
-          I am a BS Computer Science senior specializing in frontend development and UI/UX design,<br />
+          I am a BS Computer Science senior specializing in frontend development and UI/UX design,
           with proficiency in Figma, React.js, HTML, CSS, and JavaScript!<br />
-          Currently advancing backend and cloud skills to become a full-stack developer,<br />
+          Currently advancing backend and cloud skills to become a full-stack developer,
           with a strong focus on delivering scalable and user-centric digital solutions.
         </p>
 
