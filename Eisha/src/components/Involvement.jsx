@@ -6,7 +6,7 @@ export default function Involvement() {
   return (
     <section id="involvement" className="involvement-section">
       <div className="involvement-left">
-        <div className="vertical-text-container">
+        <div className="vertical-text-container shiny-text">
           {text.split("").map((char, index, arr) => {
             if (index === arr.length - 2) {
               // combine last two chars (t + .)

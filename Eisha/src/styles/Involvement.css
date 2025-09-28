@@ -15,7 +15,7 @@
   margin-right: 40px;
 }
 
-/* container with shiny gradient border */
+/* container with shiny border + shine effect */
 .vertical-text-container {
   display: flex;
   flex-direction: column;
@@ -24,16 +24,29 @@
   border: 2px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(90deg, #3e3e3e, #797979);
-  color: #aaa;
   font-family: 'Nanum Myeongjo', serif;
-  font-size: 2rem;
-  font-weight: bold;
   line-height: 1.2;
+  /* shine effect */
+  color: #edededa4;
+  background: radial-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 8s linear infinite;
 }
 
 /* stacked characters */
 .vertical-char {
   display: block;
+  font-size: clamp(1.25em, 2vw, 1.2rem);
+  font-weight: 100;
+  text-align: center;
 }
 
 /* last line with vertical line below */
@@ -57,4 +70,14 @@
   flex: 1;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/* shine animation */
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
