@@ -16,14 +16,27 @@ export default function WorkExp() {
   ];
 
   const itemsRef = useRef([]);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Fade in/out section
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
+          sectionRef.current.classList.add("visible");
+        } else {
+          sectionRef.current.classList.remove("visible");
+        }
+      }
+      // Fade in/out timeline items
       itemsRef.current.forEach((item) => {
         if (!item) return;
         const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 100) {
           item.classList.add("visible");
+        } else {
+          item.classList.remove("visible");
         }
       });
     };
@@ -34,27 +47,26 @@ export default function WorkExp() {
   }, []);
 
   return (
-    <section id="work" className="work-exp">
+    <section id="work" className="work-exp" ref={sectionRef}>
       <div className="liquid-bg"></div>
       <div className="content">
         <h2>Work Experience</h2>
         <div className="timeline">
-      {experiences.map((exp, index) => (
-        <div
-          key={index}
-          ref={(el) => (itemsRef.current[index] = el)}
-          className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-        >
-          <div className="timeline-content">
-            <h3>{exp.title}</h3>
-            <span>{exp.date}</span>
-            <p>{exp.desc}</p>
-          </div>
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              ref={(el) => (itemsRef.current[index] = el)}
+              className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+            >
+              <div className="timeline-content">
+                <h3>{exp.title}</h3>
+                <span>{exp.date}</span>
+                <p>{exp.desc}</p>
+              </div>
+            </div>
+          ))}
+          <div className="line-bottom"></div>
         </div>
-      ))}
-      <div className="line-bottom"></div>
-    </div>
-
       </div>
     </section>
   );

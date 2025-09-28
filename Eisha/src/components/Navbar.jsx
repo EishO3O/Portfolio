@@ -30,7 +30,6 @@ export default function Navbar() {
 
       {/* Desktop menu */}
       <ul>
-        <li><a href="#intro">Intro</a></li>
         <li><a href="#work">Work Exp</a></li>
         <li><a href="#involvement">Involvement</a></li>
         <li><a href="#project">Featured Project</a></li>
@@ -49,7 +48,6 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <ul className={`mobile ${mobileOpen ? "active" : ""}`}>
-        <li><a href="#intro" onClick={toggleMobileMenu}>Intro</a></li>
         <li><a href="#work" onClick={toggleMobileMenu}>Work Exp</a></li>
         <li><a href="#involvement" onClick={toggleMobileMenu}>Involvement</a></li>
         <li><a href="#project" onClick={toggleMobileMenu}>Featured Project</a></li>

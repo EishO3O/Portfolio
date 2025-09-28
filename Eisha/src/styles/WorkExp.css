@@ -112,7 +112,7 @@
 }
 
 .timeline-content:hover {
-  box-shadow: 0 0 20px #f67700, 0 0 40px #0e03d87d;
+  box-shadow: 0 0 20px #f63100, 0 0 40px #0e03d87d;
   transform: translateY(-5px);
 }
 
