@@ -1,0 +1,60 @@
+.involvement-section {
+  display: flex;
+  align-items: flex-start;
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.involvement-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+}
+
+/* container with shiny gradient border */
+.vertical-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #3e3e3e, #797979);
+  color: #aaa;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* stacked characters */
+.vertical-char {
+  display: block;
+}
+
+/* last line with vertical line below */
+.last-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* small vertical line inside container below last line */
+.inner-vertical-line {
+  width: 2px;
+  height: 100px; /* adjust line length */
+  background: linear-gradient(180deg, #b0b0b0, #2b2b2b);
+  margin-top: 4px;
+  margin-bottom: 200px;
+}
+
+.involvement-content {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
