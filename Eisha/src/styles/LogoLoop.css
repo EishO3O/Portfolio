@@ -6,6 +6,7 @@
   overflow: hidden; /* hide edges */
   padding: 0 60px; /* adjust space left & right */
   background: #0f172a;
+  margin-bottom: 60px;
 }
 
 /* The loop container */
@@ -14,6 +15,7 @@
   max-width: 1200px; /* control max width */
   position: relative;
   overflow: hidden;
+  
 
   /* edge fade */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
