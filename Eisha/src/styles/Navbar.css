@@ -1,25 +1,29 @@
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 10px; /* add some space from top for rounded effect */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%; /* slightly less than 100% so rounding is visible */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0); /* transparent initially */
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px; /* rounded corners */
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 2rem;
   box-sizing: border-box;
-  transition: padding 0.3s, background 0.3s, box-shadow 0.3s;
+  transition: padding 0.3s, background 0.3s, box-shadow 0.3s, border-radius 0.3s;
 }
 
 .navbar.shrink {
   padding: 0.5rem 2rem;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px; /* slightly smaller when shrunk */
 }
+
 
 /* Menu items */
 .navbar ul {
@@ -41,18 +45,18 @@
 }
 
 .navbar li a:hover {
-  background: rgba(0, 240, 255, 0.2);
-  color: #00f0ff;
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6f00;
 }
 
 .navbar li a::after {
   content: "";
   position: absolute;
   width: 0%;
-  height: 2px;
+  height: 1px;
   left: 0;
   bottom: 0;
-  background: #00f0ff;
+  background: #ffffff;
   transition: 0.3s;
 }
 
