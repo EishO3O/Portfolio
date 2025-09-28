@@ -1,10 +1,10 @@
-/* ------------- Layout & Containers ------------- */
-/* Container for Intro section */
+/* ----------- Layout & Containers ----------- */
 #intro {
   position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -14,26 +14,24 @@
   margin: 0;
 }
 
-.liquid-ether-container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.intro-section {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
-  z-index: 0;
 }
 
-/* Foreground text */
 .intro-text {
   position: relative;
   z-index: 10;
-  max-width: 700px;
   max-width: 90vw;
+  margin: 0 auto;
+  mix-blend-mode: screen;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* ------------- Typography ------------- */
-.intro-text .greeting {
+/* ----------- Typography ----------- */
+.greeting {
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 300;
   font-size: clamp(3rem, 10vw, 6rem);
@@ -41,8 +39,7 @@
   line-height: 1.01;
 }
 
-.name-gradient,
-.name-shiny {
+.name-gradient {
   font-family: 'Nanum Myeongjo', serif;
   font-weight: 700;
   font-size: clamp(5rem, 15vw, 10rem);
@@ -63,20 +60,22 @@
   margin-bottom: 2rem;
 }
 
-/* ------------- Buttons ------------- */
+/* ----------- Buttons ----------- */
 .intro-buttons {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   justify-content: center;
   margin-top: 2rem;
 }
 
 .shiny-btn {
   cursor: pointer;
-  background-color: #00000044;
-  border: 1px solid #353535;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.3);
   border-radius: 8px;
   padding: .4em 1.2em;
+  color: #fff;
+  mix-blend-mode: screen;
   transition: all .3s;
 }
 
@@ -84,7 +83,7 @@
   transform: scale(1.08);
 }
 
-/* ------------- Shiny Text Effect ------------- */
+/* ----------- Shiny Text Effect ----------- */
 .shiny-text {
   font-family: 'Nanum Myeongjo', serif;
   font-size: clamp(1.25em, 2vw, 1.2rem);
@@ -107,7 +106,7 @@
   animation: none;
 }
 
-/* ------------- Keyframes ------------- */
+/* ----------- Keyframes ----------- */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -119,47 +118,38 @@
   100% { background-position: -100%; }
 }
 
-/* Buttons container */
-.intro-buttons {
-  display: flex;
-  gap: 10rem;
-  justify-content: center;
-  align-items: center;
-  position: relative; 
-
-}
-
-/* Image positioned on top of text */
-.intro-btn-image {
+/* ----------- Logo Loop ----------- */
+.logo-loop-header {
   position: absolute;
-  top: -60%; /* move it upwards so it overlaps text */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000; /* adjust size */
-  max-width: 35vw;
-  height: auto;
-  z-index: 15; /* in front of text and buttons */
-  pointer-events: none; /* allows buttons to be clickable */
-}
-.intro-section {
-  position: relative;   /* important so children can use absolute positioning */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* keeps text vertically centered */
-  overflow: hidden;
+  left: 0;
+  bottom: 100px; /* increase this value so it's above the logo loop */
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .intro-logo-loop {
-  position: absolute;   /* stick to bottom */
-  bottom: 0;            /* lock at bottom */
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* see-through for LiquidEther */
-  z-index: 2;            /* on top of background */
-  pointer-events: auto;  /* keeps logos clickable */
+  background: transparent;
+  z-index: 2;
+  pointer-events: auto;
+  height: 80px; /* set height to reserve space */
 }
 
-.intro-logo-loop * {
-  background: transparent !important; /* ✅ force child elements transparent */
+.intro-logo-loop *,
+.intro-logo-loop li,
+.intro-logo-loop li img {
+  background: transparent !important;
+}
+
+/* ----------- Utility ----------- */
+.mix-screen {
+  mix-blend-mode: screen;
+  color: rgba(255, 255, 255, 0.9);
 }

@@ -48,13 +48,13 @@
   opacity: 1;
 }
 
-/* continuous scroll */
+/* continuous scroll left → right */
 @keyframes scrollLoop {
   from {
-    transform: translateX(0);
+    transform: translateX(-33.333%); /* start off-screen left */
   }
   to {
-    transform: translateX(-33.333%);
+    transform: translateX(0); /* move right across container */
   }
 }
 
