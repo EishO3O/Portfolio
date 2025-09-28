@@ -14,7 +14,7 @@ export default function Intro() {
 
       <div className="intro-text">
         <div className="greeting">Hi! I'm</div>
-        <div className="name-gradient">Richard Ryan</div>
+        <div className="name-gradient">Eisha Janel Alva</div>
         <p>
           I am a BS Computer Science senior specializing in frontend development and UI/UX design, 
           with proficiency in Figma, React.js, HTML, CSS, and JavaScript! <br />
