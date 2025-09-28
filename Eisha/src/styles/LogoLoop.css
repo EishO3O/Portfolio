@@ -1,15 +1,36 @@
-.logoloop {
-  position: relative;
+/* Wrapper to center the loop with left/right spacing */
+.logoloop-wrapper {
   width: 100%;
-  overflow: hidden;
-  height: 100px; /* adjust to icon size */
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* hide edges */
+  padding: 0 60px; /* adjust space left & right */
   background: #0f172a;
+}
+
+/* The loop container */
+.logoloop {
+  width: 100%;
+  max-width: 1200px; /* control max width */
+  position: relative;
+  overflow: hidden;
+
+  /* edge fade */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-position: 0 0;
+
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-position: 0 0;
 }
 
 .logoloop-track {
   display: flex;
-  width: max-content;
   gap: 60px;
+  width: max-content;
   animation: scrollLoop 30s linear infinite;
 }
 
@@ -17,14 +38,37 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* True continuous scroll */
+.logoloop-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* continuous scroll */
 @keyframes scrollLoop {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-33.333%);
+  }
+}
+
+/* Mobile tweak */
+@media (max-width: 640px) {
+  .logoloop-wrapper {
+    padding: 0 20px;
+  }
+
+  .logoloop-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .logoloop-track {
+    gap: 24px;
+    animation-duration: 16s;
   }
 }

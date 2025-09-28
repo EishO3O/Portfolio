@@ -16,11 +16,13 @@ const logos = [
 
 export default function LogoLoop() {
   return (
-    <div className="logoloop">
-      <div className="logoloop-track">
-        {[...logos, ...logos, ...logos].map((logo, idx) => (
-          <img key={idx} src={logo} alt="tech logo" className="logoloop-icon" />
-        ))}
+    <div className="logoloop-wrapper">
+      <div className="logoloop">
+        <div className="logoloop-track">
+          {[...logos, ...logos, ...logos].map((logo, idx) => (
+            <img key={idx} src={logo} alt="tech logo" className="logoloop-icon" />
+          ))}
+        </div>
       </div>
     </div>
   );
