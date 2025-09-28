@@ -1,4 +1,5 @@
-// src/components/Navbar.jsx
+import '../styles/Navbar.css';
+
 export default function Navbar() {
   return (
     <nav className="navbar">

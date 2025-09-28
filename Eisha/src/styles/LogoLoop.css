@@ -1,0 +1,30 @@
+.logoloop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100px; /* adjust to icon size */
+  background: #0f172a;
+}
+
+.logoloop-track {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: scrollLoop 30s linear infinite;
+}
+
+.logoloop-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* True continuous scroll */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
