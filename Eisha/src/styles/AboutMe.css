@@ -1,0 +1,63 @@
+.aboutme-section {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutme-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.aboutme-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.aboutme-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.aboutme-bio {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.aboutme-hobbies span {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.aboutme-funfact {
+  font-style: italic;
+  margin-top: 20px;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutme-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutme-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutme-hobbies span {
+    margin-right: 10px;
+  }
+}
