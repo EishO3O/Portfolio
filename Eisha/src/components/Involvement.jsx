@@ -1,6 +1,6 @@
 import "../styles/Involvement.css";
 import CloudImg from "../assets/Cloud.jpg";
-import NotionImg from "../assets/notion.jpg";
+import NotionImg from "../assets/Notion.jpg";
 import UiUxImg from "../assets/Ui-Ux.jpg";
 export default function Involvement() {
   const text = "Involvement.";
