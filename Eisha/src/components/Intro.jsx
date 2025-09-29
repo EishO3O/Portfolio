@@ -26,8 +26,8 @@ export default function Intro() {
           <a href="/resume.pdf" download className="shiny-btn">
             <span className="shiny-text">Download Resume</span>
           </a>
-          <a href="#contact" className="shiny-btn">
-            <span className="shiny-text">Reach Out To Me</span>
+          <a href="mailto:eishajanelalva@gmail.com" className="shiny-btn">
+            <span className="shiny-text">Email Me</span>
           </a>
         </div>
       </div>
