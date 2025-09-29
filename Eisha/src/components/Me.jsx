@@ -4,7 +4,7 @@ import profileImg from "../assets/profile.jpg"; // replace with your image path
 
 const AboutMe = () => {
   return (
-    <section className="aboutme-section">
+    <section id="me" className="aboutme-section">
       <div className="aboutme-container">
         <div className="aboutme-image">
           <img src={profileImg} alt="Me" />
