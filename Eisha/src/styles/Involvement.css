@@ -108,9 +108,9 @@
 
 /* Text inside overlay */
 .column-number {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
-  color: #F97316;
+  color: #ff5100;
   margin-bottom: 10px;
 }
 
@@ -219,13 +219,14 @@
 
   /* Scale down fonts */
   .column-number {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .column-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    line-height:1.3;
   }
   .column-subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .column-description {
     font-size: 0.8rem;
