@@ -1,3 +1,7 @@
+/* =========================
+   Featured Project Section
+   ========================= */
+
 /* Whole section background */
 .featured-section {
   background-color: #000; /* black */
@@ -11,7 +15,8 @@
 .featured-container {
   width: 100%;
   display: flex;
-  justify-content: flex-start; /* stick to left by default */
+  flex-direction: column; /* stack content + dots */
+  align-items: flex-start; /* 👈 align to left by default */
   padding: 0 40px;
 }
 
@@ -42,16 +47,57 @@
   font-size: 1rem;
 }
 
-/* 📱 Responsive: center everything on small screens */
+/* =========================
+   Swiper Pagination Dots
+   ========================= */
+
+/* Each card has its own dots container */
+.custom-pagination {
+  display: flex;
+  justify-content: flex-start; /* 👈 align left with container */
+  margin-top: 20px;   /* space below project content */
+  width: 100%;
+  padding: 0 40px;   
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background: #fff; /* white dots */
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2); /* subtle grow effect */
+}
+
+/* =========================
+   Responsive Styles
+   ========================= */
 @media (max-width: 768px) {
   .featured-container {
     justify-content: center;   /* center horizontally */
+    align-items: center;       /* center content and dots */
     padding: 0 20px;           /* smaller padding */
     text-align: center;        /* text in the middle */
   }
 
   .featured-left {
     text-align: center;
+  }
 
+  .custom-pagination {
+    justify-content: center; /* 👈 center dots on small screens */
+    margin-top: 15px;
+  }
+
+  .custom-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px; /* tighter spacing */
   }
 }
