@@ -66,6 +66,7 @@
   gap: 8rem;
   justify-content: center;
   margin-top: 2rem;
+  margin-bottom: 6rem;
 }
 
 .shiny-btn {
@@ -177,5 +178,12 @@
   .shiny-btn {
     width: 80%; /* make them wide but neat */
     text-align: center;
+  }
+}
+/* ----------- More Space Between Buttons & Tech Stack Header ----------- */
+
+@media (max-width: 768px) {
+  .intro-buttons {
+    margin-bottom: 8rem; /* even more space on mobile */
   }
 }
