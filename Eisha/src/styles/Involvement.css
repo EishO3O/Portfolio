@@ -165,9 +165,58 @@
 
 /* Mobile / small screens: stack columns vertically */
 @media (max-width: 900px) {
+  .vertical-text-container {
+    flex-direction: row;
+    justify-content: flex-start; /* start from left */
+    padding: 10px 20px;
+    width: 100%; /* full width */
+    box-sizing: border-box; /* include padding in width */
+  }
+  .vertical-char {
+    display: inline-block; /* inline letters instead of stacked */
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* adjust for mobile */
+    margin: 0 2px; /* spacing between letters */
+  }
+  .vertical-char.last-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
   .involvement-section {
     flex-direction: column;
     align-items: center;
+  }
+
+  .last-line {
+    flex-direction: row; /* horizontal */
+    align-items: center; /* vertically center with line */
+    justify-content: flex-start; /* center the text + line horizontally */
+    gap: 5px; /* small space between text and line */
+    width: 100%; /* full width */
+  }
+    .inner-vertical-line {
+    width: 100%; /* horizontal line if needed */
+    height: 2px;
+    margin: 10px 0; /* spacing around the line */
+    background: linear-gradient(90deg, #b0b0b0, #2b2b2b);
+  }
+    .vertical-char:last-child {
+    margin-right: 5px; /* spacing before the line if needed */
+  }
+    .vertical-char.last-line {
+    display: flex;          /* make it a flex container */
+    flex-direction: row;    /* horizontal */
+    align-items: center;    /* vertically center the text and line */
+    gap: 6px;               /* space between t. and the line */
+  }
+
+  .inner-vertical-line {
+    width: 30px; /* horizontal line length */
+    height: 2px; /* thickness */
+    margin: 0;   /* remove vertical margins */
+    background: linear-gradient(90deg, #b0b0b0, #2b2b2b);
   }
 
   .involvement-left {
