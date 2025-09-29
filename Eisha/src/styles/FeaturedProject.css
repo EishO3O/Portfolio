@@ -1,0 +1,57 @@
+/* Whole section background */
+.featured-section {
+  background-color: #000; /* black */
+  color: #fff;            /* white text */
+  min-height: 100vh;      /* full screen height */
+  display: flex;
+  align-items: center;    /* vertical center */
+}
+
+/* Container keeps content aligned left on desktop */
+.featured-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* stick to left by default */
+  padding: 0 40px;
+}
+
+/* Left content box */
+.featured-left {
+  max-width: 600px;
+  text-align: left;
+}
+
+.featured-left h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px;
+}
+
+.featured-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.featured-sub h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.featured-sub p {
+  font-size: 1rem;
+}
+
+/* 📱 Responsive: center everything on small screens */
+@media (max-width: 768px) {
+  .featured-container {
+    justify-content: center;   /* center horizontally */
+    padding: 0 20px;           /* smaller padding */
+    text-align: center;        /* text in the middle */
+  }
+
+  .featured-left {
+    text-align: center;
+
+  }
+}
