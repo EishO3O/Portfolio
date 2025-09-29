@@ -8,14 +8,15 @@
   overflow: hidden;
 }
 
+/* Left vertical text */
 .involvement-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 60px; /* space from columns */
 }
 
-/* container with shiny border + shine effect */
+/* Vertical text container with shine effect */
 .vertical-text-container {
   display: flex;
   flex-direction: column;
@@ -28,7 +29,7 @@
   line-height: 1.2;
   /* shine effect */
   color: #edededa4;
-  background: radial-gradient(
+  background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 40%,
     rgba(255, 255, 255, 0.8) 50%,
@@ -60,16 +61,51 @@
 /* small vertical line inside container below last line */
 .inner-vertical-line {
   width: 2px;
-  height: 100px; /* adjust line length */
+  height: 100px;
   background: linear-gradient(180deg, #b0b0b0, #2b2b2b);
   margin-top: 4px;
   margin-bottom: 200px;
 }
 
+/* Right columns */
 .involvement-content {
   flex: 1;
-  font-size: 1.1rem;
-  line-height: 1.6;
+}
+
+.involvement-columns {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* responsive wrap for smaller screens */
+}
+
+.involvement-column {
+  flex: 1;
+  min-width: 250px; /* ensures columns don't shrink too much */
+}
+
+.column-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff6ec4; /* accent color */
+  margin-bottom: 10px;
+}
+
+.column-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.column-subtitle {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.column-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
 }
 
 /* shine animation */
@@ -79,5 +115,35 @@
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .involvement-section {
+    flex-direction: column;
+    align-items: center; /* center the whole section horizontally */
+  }
+
+  .involvement-left {
+    margin: 0 0 40px 0; /* reset right margin, add bottom spacing */
+    align-items: center; /* center the vertical text container */
+  }
+
+  .involvement-columns {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%; /* ensure columns take full width */
+    align-items: center; /* center columns if narrower than screen */
+  }
+
+  .involvement-column {
+    max-width: 600px; /* optional: limit column width for readability */
+  }
+
+  /* shrink the inner vertical line on mobile */
+  .inner-vertical-line {
+    height: 50px; /* shorter than desktop */
+    margin-bottom: 50px; /* less bottom spacing */
   }
 }
