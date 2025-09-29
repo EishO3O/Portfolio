@@ -4,7 +4,7 @@ import Intro from "./components/Intro";
 import WorkExp from "./components/WorkExp";
 import Involvement from "./components/Involvement";
 import FeaturedProject from "./components/FeaturedProject";
-import TechStack from "./components/TechStack";
+import TechStack from "./components/Me";
 
 
 function App() {

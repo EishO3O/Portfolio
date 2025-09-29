@@ -33,7 +33,7 @@ export default function Navbar() {
         <li><a href="#work">Work Exp</a></li>
         <li><a href="#involvement">Involvement</a></li>
         <li><a href="#project">Featured Project</a></li>
-        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#Me">Me!</a></li>
       </ul>
 
       {/* Hamburger */}
@@ -51,7 +51,7 @@ export default function Navbar() {
         <li><a href="#work" onClick={toggleMobileMenu}>Work Exp</a></li>
         <li><a href="#involvement" onClick={toggleMobileMenu}>Involvement</a></li>
         <li><a href="#project" onClick={toggleMobileMenu}>Featured Project</a></li>
-        <li><a href="#tech" onClick={toggleMobileMenu}>Tech Stack</a></li>
+        <li><a href="#Me" onClick={toggleMobileMenu}>Me!</a></li>
       </ul>
     </nav>
   );
