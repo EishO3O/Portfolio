@@ -183,10 +183,37 @@
     text-align: center;
   }
 }
-/* ----------- More Space Between Buttons & Tech Stack Header ----------- */
+/* Tighter adjustments for shorter screens (<=800px height) */
+@media (max-height: 890px) {
+  #intro,
+  .intro-section {
+    padding-top: 4rem;   /* reduce so content fits */
+    padding-bottom: 6rem;
+  }
 
-@media (max-width: 768px) {
-  .intro-buttons {
-    margin-bottom: 8rem; /* even more space on mobile */
+  .greeting {
+    font-size: clamp(2.5rem, 8vw, 4rem); /* scale greeting smaller */
+  }
+
+
+  .name-gradient {
+    font-size: clamp(4rem, 12vw, 7rem); /* shrink name text */
+  }
+  .intro-text p {
+    font-size: clamp(0.9rem, 2vw, 1rem); /* slightly smaller paragraph */
+  }
+}
+/* Even smaller screens (<=750px height) */
+@media (max-height: 750px) {
+  .name-gradient {
+    font-size: clamp(4rem, 10vw, 5rem); /* shrink more for short screens */
+  }
+
+  .greeting {
+    font-size: clamp(2rem, 7vw, 3rem); /* optional: shrink greeting too */
+  }
+
+  .intro-text p {
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem); /* tighten paragraph text */
   }
 }
