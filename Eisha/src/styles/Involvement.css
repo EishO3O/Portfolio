@@ -1,6 +1,7 @@
+/* ----------- Section Layout ----------- */
 .involvement-section {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   background-color: #000;
   color: #fff;
   padding: 80px 20px;
@@ -8,12 +9,11 @@
   overflow: hidden;
 }
 
-/* Left vertical text */
 .involvement-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 60px; /* space from columns */
+  margin-right: 60px;
 }
 
 /* Vertical text container with shine effect */
@@ -27,7 +27,6 @@
   border-image-source: linear-gradient(90deg, #3e3e3e, #797979);
   font-family: 'Nanum Myeongjo', serif;
   line-height: 1.2;
-  /* shine effect */
   color: #edededa4;
   background: linear-gradient(
     120deg,
@@ -38,7 +37,6 @@
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
-  display: inline-block;
   animation: shine 8s linear infinite;
 }
 
@@ -50,7 +48,6 @@
   text-align: center;
 }
 
-/* last line with vertical line below */
 .last-line {
   display: flex;
   flex-direction: column;
@@ -58,7 +55,6 @@
   position: relative;
 }
 
-/* small vertical line inside container below last line */
 .inner-vertical-line {
   width: 2px;
   height: 100px;
@@ -72,21 +68,49 @@
   flex: 1;
 }
 
+/* ----------- Columns Layout ----------- */
+/* Desktop / large screens */
 .involvement-columns {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap; /* responsive wrap for smaller screens */
+  flex: 1;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .involvement-column {
-  flex: 1;
-  min-width: 250px; /* ensures columns don't shrink too much */
+  flex: 1 1 250px;
+  min-width: 250px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
 
+/* Overlay padding */
+.column-overlay {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 0 0 12px 12px;
+  padding-top: 34rem; /* desktop */
+}
+
+/* Text inside overlay */
 .column-number {
   font-size: 3rem;
   font-weight: bold;
-  color: #ff6ec4; /* accent color */
+  color: #ff6ec4;
   margin-bottom: 10px;
 }
 
@@ -118,32 +142,55 @@
   }
 }
 
+/* ----------- Responsive ----------- */
+/* Tablet / medium screens: gradually reduce padding */
+@media (max-width: 1350px) {
+  .column-overlay {
+    padding-top: 30rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .column-overlay {
+    padding-top: 25rem;
+  }
+}
+
+/* New: 1020px → 901px */
+@media (max-width: 1020px) and (min-width: 901px) {
+  .column-overlay {
+    padding-top: 7rem;
+  }
+}
+
 /* Responsive for mobile */
 @media (max-width: 900px) {
   .involvement-section {
+    display: flex;
     flex-direction: column;
-    align-items: center; /* center the whole section horizontally */
+    align-items: center;
   }
 
   .involvement-left {
-    margin: 0 0 40px 0; /* reset right margin, add bottom spacing */
-    align-items: center; /* center the vertical text container */
+    margin: 0 0 40px 0;
+    align-items: center;
   }
 
   .involvement-columns {
+    display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 100%; /* ensure columns take full width */
-    align-items: center; /* center columns if narrower than screen */
+    width: 100%;
+    align-items: center;
   }
 
   .involvement-column {
-    max-width: 600px; /* optional: limit column width for readability */
+    height: auto;
+    max-width: 600px;
   }
 
-  /* shrink the inner vertical line on mobile */
   .inner-vertical-line {
-    height: 50px; /* shorter than desktop */
-    margin-bottom: 50px; /* less bottom spacing */
+    height: 50px;
+    margin-bottom: 50px;
   }
 }

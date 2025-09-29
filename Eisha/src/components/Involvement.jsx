@@ -1,31 +1,39 @@
 import "../styles/Involvement.css";
-
+import CloudImg from "../assets/Cloud.jpg";
+import NotionImg from "../assets/notion.jpg";
+import UiUxImg from "../assets/Ui-Ux.jpg";
 export default function Involvement() {
   const text = "Involvement.";
 
-  const involvementData = [
-    {
-      number: "1",
-      title: "Cloud Developer Lead",
-      subtitle: "Google Developer Groups - Holy Angel University",
-      description:
-        'Awarded by Google for developing “Trashtrackr,” an AI-powered mobile app that provides smart waste disposal guidance.',
-    },
-    {
-      number: "2",
-      title: "Notion Volunteer",
-      subtitle: "Holy Angel University",
-      description:
-        "Assisted Notion workshops for 50+ students, created 5+ custom templates, and maintained the organization’s workspace to improve productivity, accessibility, and collaboration for 20+ members.",
-    },
-    {
-      number: "3",
-      title: "UI/UX Developer Lead",
-      subtitle: "Google Developer Groups - Holy Angel University",
-      description:
-        "Led a hands-on UI/UX workshop for students, guiding 10+ teams through iterative prototyping and interface enhancements, helping them apply design principles to PHCI and other professional subjects. Designed and launched the GDG HAU website, showcasing the organization’s projects and events; presented to 150+ attendees across General Assembly, Org Fest, and other campus activities.",
-    },
-  ];
+
+
+const involvementData = [
+  {
+    number: "1",
+    title: "Cloud Developer Lead",
+    subtitle: "Google Developer Groups - Holy Angel University",
+    description:
+      'Awarded by Google for developing “Trashtrackr,” an AI-powered mobile app that provides smart waste disposal guidance.',
+    img: CloudImg,
+  },
+  {
+    number: "2",
+    title: "Notion Volunteer",
+    subtitle: "Holy Angel University",
+    description:
+      "Assisted Notion workshops for 50+ students, created 5+ custom templates, and maintained the organization’s workspace to improve productivity, accessibility, and collaboration for 20+ members.",
+    img: NotionImg,
+  },
+  {
+    number: "3",
+    title: "UI/UX Developer Lead",
+    subtitle: "Google Developer Groups - Holy Angel University",
+    description:
+      "Led a UI/UX workshop for 10+ student teams, guiding prototyping and design application, and designed the GDG HAU website showcased to 150+ attendees at campus events.",
+    img: UiUxImg,
+  },
+];
+
 
   return (
     <section id="involvement" className="involvement-section">
@@ -53,11 +61,17 @@ export default function Involvement() {
       <div className="involvement-content">
         <div className="involvement-columns">
           {involvementData.map((item, idx) => (
-            <div key={idx} className="involvement-column">
-              <h1 className="column-number">{item.number}</h1>
-              <h2 className="column-title">{item.title}</h2>
-              <h3 className="column-subtitle">{item.subtitle}</h3>
-              <p className="column-description">{item.description}</p>
+            <div
+              key={idx}
+              className="involvement-column"
+              style={{ backgroundImage: `url(${item.img})` }}
+            >
+              <div className="column-overlay">
+                <h1 className="column-number">{item.number}</h1>
+                <h2 className="column-title">{item.title}</h2>
+                <h3 className="column-subtitle">{item.subtitle}</h3>
+                <p className="column-description">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>
