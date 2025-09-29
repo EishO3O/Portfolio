@@ -153,3 +153,29 @@
   mix-blend-mode: screen;
   color: rgba(255, 255, 255, 0.9);
 }
+/* ----------- Responsive Buttons ----------- */
+@media (max-width: 768px) {
+  .intro-buttons {
+    gap: 1.5rem; /* much smaller gap on mobile */
+    flex-wrap: wrap; /* allow wrapping if needed */
+    margin-top: 1.5rem;
+  }
+
+  .shiny-btn {
+    padding: 0.5em 1em; /* slightly smaller buttons */
+    font-size: 0.9rem; /* scale text down */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-buttons {
+    gap: 1rem;
+    flex-direction: column; /* stack vertically if screen is very small */
+    align-items: center;
+  }
+
+  .shiny-btn {
+    width: 80%; /* make them wide but neat */
+    text-align: center;
+  }
+}
