@@ -100,7 +100,7 @@
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.6) 100%
+    rgb(0, 0, 0) 100%
   );
   border-radius: 0 0 12px 12px;
   padding-top: 34rem; /* desktop */
@@ -110,7 +110,7 @@
 .column-number {
   font-size: 3rem;
   font-weight: bold;
-  color: #ff6ec4;
+  color: #F97316;
   margin-bottom: 10px;
 }
 
@@ -163,10 +163,9 @@
   }
 }
 
-/* Responsive for mobile */
+/* Mobile / small screens: stack columns vertically */
 @media (max-width: 900px) {
   .involvement-section {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -180,17 +179,64 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    height: fit-content;
     align-items: center;
   }
 
   .involvement-column {
-    height: auto;
+    display: flex;
+    flex-direction: column; /* column layout */
+    align-items: stretch;
+    justify-content: flex-start;
     max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    height: auto; /* flexible height */
+    position: relative;
   }
 
-  .inner-vertical-line {
-    height: 50px;
-    margin-bottom: 50px;
+  /* Overlay stretches to cover full column */
+  .column-overlay {
+    flex: 1; /* fills the column height */
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgb(0, 0, 0) 100%
+    );
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+  }
+
+  /* Scale down fonts */
+  .column-number {
+    font-size: 2rem;
+  }
+  .column-title {
+    font-size: 1.2rem;
+  }
+  .column-subtitle {
+    font-size: 0.9rem;
+  }
+  .column-description {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+  /* Ensure text wraps inside overlay */
+  .column-number,
+  .column-title,
+  .column-subtitle,
+  .column-description {
+    word-wrap: break-word;
   }
 }
