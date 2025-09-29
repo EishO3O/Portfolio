@@ -210,7 +210,7 @@
   }
 
   .greeting {
-    font-size: clamp(2rem, 7vw, 3rem); /* optional: shrink greeting too */
+    font-size: clamp(2.5rem, 7vw, 3rem); /* optional: shrink greeting too */
   }
 
   .intro-text p {
