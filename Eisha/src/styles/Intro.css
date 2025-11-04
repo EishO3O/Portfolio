@@ -206,7 +206,7 @@
 /* Even smaller screens (<=750px height) */
 @media (max-height: 750px) {
   .name-gradient {
-    font-size: clamp(4rem, 10vw, 5rem); /* shrink more for short screens */
+    font-size: clamp(3.5rem, 10vw, 5rem); /* shrink more for short screens */
   }
 
   .greeting {
