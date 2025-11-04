@@ -23,7 +23,7 @@ export default function Intro() {
         </p>
         {/* Buttons */}
         <div className="intro-buttons">
-          <a href="/resume.pdf" download className="shiny-btn">
+          <a href="/Eisha_Janel_Alva_Resume_.pdf" download className="shiny-btn">
             <span className="shiny-text">Download Resume</span>
           </a>
           <a href="mailto:eishajanelalva@gmail.com" className="shiny-btn">
